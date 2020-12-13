@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+
+<head>
+<!-- Hamburger logo -->
+<link rel="shortcut icon" href="assets/hamburger_icon.ico" />
+<object th:include="/fragments/header"></object>
+
+    <!-- Title -->
+    <title>Support</title>
+  </head>
+<body>
+<div th:include="/fragments/navbar"></div>
+
+
+    <!-- Restaurant name -->
+    <div class="jumbotron-fluid text-center">
+      <h1 class="animated fadeInDown outline2" id="FHamburger"> Flying Hamburgers! </h1>
+    </div>
+    
+    
+    <img class="centeredSquirrel" src="/picnicSquirrel.gif">
+    
+    
+    <!-- Montra -->
+    <div class="jumbotron-fluid text-center">
+      <h3 class="animated fadeInDown" id="montra"> Live to sauce. Sauce to live. </h3>
+    </div>
+
+    <!-- Footer --> 
+	<div th:include="/fragments/footer"></div>
+  </body>
+</html>

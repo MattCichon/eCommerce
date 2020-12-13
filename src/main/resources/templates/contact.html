@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+
+<head>
+<!-- Hamburger logo -->
+<link rel="shortcut icon" href="assets/hamburger_icon.ico" />
+<object th:include="/fragments/header"></object>
+
+    <!-- Title -->
+    <title>Contact Us</title>
+  </head>
+<body>
+<div th:include="/fragments/navbar"></div>
+
+
+    <!-- Restaurant name -->
+    <div class="jumbotron-fluid text-center">
+      <h1 class="animated fadeInDown outline2" id="FHamburger"> Flying Hamburgers! </h1>
+    </div>
+ 
+ <!--      Sign Up Form		-->
+ <form action="#" th:action="@{/contact}" th:object="${subscriber}" method="post">
+  <section class="order-form my-4 mx-4">
+    <div class="container pt-4">
+
+      <div class="row">
+        <div class="col-12">
+          <h1 class="animated fadeInUp" id="Subtitle">Join The Nut House!!!</h1>
+          <h3 class="Squirrel">Sign up now to invite squirrels to nest in YOUR attic!</h3>
+          <hr class="mt-1">
+        </div>
+        <div class="col-12">
+
+          <div class="row mx-4">
+            <div class="col-12 mb-2">
+              <label class="order-form-label">Name</label>
+            </div>
+            <div class="col-12 col-sm-6">
+              <input type="text" required class="order-form-input" th:field="*{firstName}" placeholder="First">
+            </div>
+            <div class="col-12 col-sm-6 mt-2 mt-sm-0">
+              <input type="text" required class="order-form-input" th:field="*{lastName}" placeholder="Last">
+            </div>
+          </div>
+
+           <div class="row mt-3 mx-4">
+            <div class="col-12 col-sm-6 mt-2 pr-sm-2">
+              <input type="email" required class="order-form-input" th:field="*{userEmail}" placeholder="Email Address">
+            </div>
+            <div class="col-12 col-sm-6 mt-2 pl-sm-0">
+              <input type="text" required class="order-form-input" th:field="*{userName}" placeholder="Short message">
+            </div>
+          </div>
+
+          <div class="row mt-3 mx-4">
+            <div class="col-12">
+              <div class="form-check">
+                <input type="checkbox" required class="form-check-input" name="validation" id="validation" value="1">
+                <label for="validation" class="orange2">I love squirrels</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="row mt-3">
+            <div class="col-12">
+              <button type="submit" id="btnSubmit" class="btn btn-light d-block mx-auto btn-submit">Submit</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+ </form>
+    
+    <!-- Montra -->
+    <div class="jumbotron-fluid text-center">
+      <h3 class="animated fadeInDown" id="montra"> Live to sauce. Sauce to live. </h3>
+    </div>
+
+    <!-- Footer --> 
+	<div th:include="/fragments/footer"></div>  
+  </body>
+</html>

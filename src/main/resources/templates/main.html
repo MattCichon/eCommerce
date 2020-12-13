@@ -1,0 +1,62 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+<!-- Hamburger logo -->
+<link rel="shortcut icon" href="assets/hamburger_icon.ico" />
+
+<object th:include="/fragments/header"></object>
+<title>Flying Hamburgers!</title>
+</head>
+<body>
+	<div th:replace="fragments/navbar"></div>
+	
+	<!-- Restaurant name -->
+	<div class="jumbotron-fluid text-center">
+		<h1 class="animated fadeInDown outline2" id="FHamburger">Flying
+			Hamburgers!</h1>
+	</div><!-- Products title -->
+	<div class="jumbotron-fluid text-center">
+		<h1 class="animated fadeInUp outline2" id="Subtitle">The Products!</h1>
+	</div>
+
+	<main role="main">
+		<!-- Main jumbotron for a primary marketing message or call to action -->
+		<div class="jumbotron">
+			<div class="container">
+			<div class="text: center">
+			
+				<h2 class="gradient outline">Do you love squirrels?</h2>
+				<p> </p>
+				<p> Lure squirrels to your yard with these
+					fun gifts!</p>
+				<p>
+					<a class="btn btn-primary btn-lg" href="/about" role="button">Learn
+						more &raquo;</a>
+				</p>
+				</div>
+				</div>
+			</div>
+		<div class="container">
+			<div class="row">
+			<div class="col-sm-0 col-md-12"></div>
+					<div th:each="product:${products}">
+						<div class="card" style="width: 24rem; height: 48rem; margin: 20px;">
+							<img th:src="${product.image}" class="card-img-top" alt="...">
+							<div class="card-body">
+								<h5 class="card-title" th:text="${product.name}"></h5>
+								<p class="card-text" th:text="${product.description}"></p>
+								<a th:href="@{/product/} + ${product.id}"
+									class="btn btn-primary col text-center">Info</a>
+							</div>
+						</div>
+					</div>
+			</div>
+		</div>
+		<div class="container">
+	<footer th:include="fragments/footer"></footer>
+	</div>
+	</main>
+	
+</body>
+</html>
+
